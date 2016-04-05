@@ -4,7 +4,7 @@
   "description": "Error object with a status code",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/*"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/gitterHQ/statuserror/issues"
   },
-  "homepage": "https://github.com/gitterHQ/statuserror"
+  "homepage": "https://github.com/gitterHQ/statuserror",
+  "devDependencies": {
+    "bluebird": "^3.3.4",
+    "mocha": "^2.4.5"
+  }
 }
