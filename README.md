@@ -16,7 +16,7 @@ var StatusError = require('statuserror');
 
 // Without a message...
 var e = new StatusError(404);
-// e.status == 400
+// e.status == 404
 // e.message = "Not Found"
 
 // With a message...
