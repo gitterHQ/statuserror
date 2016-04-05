@@ -1,6 +1,6 @@
 {
   "name": "statuserror",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Error object with a status code",
   "main": "index.js",
   "scripts": {
