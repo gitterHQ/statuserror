@@ -1,12 +1,20 @@
 /*jshint node: true */
 'use strict';
 
+var http = require('http');
+
+/* Create an error as per http://bluebirdjs.com/docs/api/catch.html */
 function StatusError(status, message) {
-  this.constructor.prototype.__proto__ = Error.prototype;
-  Error.captureStackTrace(this, this.constructor);
-  this.name = this.constructor.name;
-  this.message = message;
-  this.status = status;
+    if (!message) {
+      message = http.STATUS_CODES[status] || http.STATUS_CODES['500'];
+    }
+
+    this.message = message;
+    this.status = status;
+    this.name = "StatusError";
+    Error.captureStackTrace(this, StatusError);
 }
+StatusError.prototype = Object.create(Error.prototype);
+StatusError.prototype.constructor = StatusError;
 
 module.exports = StatusError;
